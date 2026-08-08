@@ -1,0 +1,10 @@
+/terraform-provider-vault-secrets-netbox
+*.zip
+*.out
+*.test
+dist/
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+.env
