@@ -1,4 +1,4 @@
-module git.unkin.net/unkin/terraform-provider-vault-secrets-netbox
+module github.com/IUCLabs/terraform-provider-vault-secrets-netbox
 
 go 1.25
 

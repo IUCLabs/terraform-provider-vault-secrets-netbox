@@ -29,7 +29,7 @@ func New(version string) func() provider.Provider {
 }
 
 func (p *netboxProvider) Metadata(_ context.Context, _ provider.MetadataRequest, resp *provider.MetadataResponse) {
-	// The provider's source address is git.unkin.net/unkin/vault-secrets-netbox,
+	// The provider's source address is iuclabs/vault-secrets-netbox,
 	// but its resources are prefixed "netbox_" (declare it in required_providers
 	// under the local name "netbox"), mirroring how google-beta ships google_*.
 	resp.TypeName = "netbox"
@@ -38,7 +38,8 @@ func (p *netboxProvider) Metadata(_ context.Context, _ provider.MetadataRequest,
 
 func (p *netboxProvider) Schema(_ context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
 	resp.Schema = schema.Schema{
-		Description: "Manage the NetBox token secrets engine (mount config and roles) on HashiCorp Vault or OpenBao.",
+		Description:         "Manage the NetBox token secrets engine (mount config and roles) on HashiCorp Vault or OpenBao.",
+		MarkdownDescription: "Manage the [vault-plugin-secrets-netbox](https://github.com/IUCLabs/vault-plugin-secrets-netbox) secrets engine (mount, config and roles) on HashiCorp Vault or OpenBao. The plugin must already be registered in the server's plugin catalog.",
 		Attributes: map[string]schema.Attribute{
 			"address": schema.StringAttribute{
 				Description: "Address of the Vault/OpenBao server. Falls back to the VAULT_ADDR environment variable.",

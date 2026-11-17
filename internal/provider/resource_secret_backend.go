@@ -62,7 +62,7 @@ func (r *secretBackendResource) Schema(_ context.Context, _ resource.SchemaReque
 				},
 			},
 			"plugin": schema.StringAttribute{
-				Description: "Registered plugin name/type to mount.",
+				Description: "Name of the plugin in the plugin catalog. Defaults to \"vault-plugin-secrets-netbox\".",
 				Optional:    true,
 				Computed:    true,
 				Default:     stringdefault.StaticString(defaultPluginType),
